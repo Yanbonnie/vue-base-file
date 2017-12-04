@@ -1,6 +1,6 @@
 <template>
 	<div class="right_col">
-        <p class="hello">{{msg}}</p>
+        <p class="hello">{{msg}}<span class="iconfont icon-add"></span></p>
 	</div>
 </template>
 

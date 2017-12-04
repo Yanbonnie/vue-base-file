@@ -9,6 +9,7 @@ axios.defaults.withCredentials = true
 Vue.prototype.$http = axios
 
 /*CSS*/
+import '@/assets/font/iconfont.css'
 import '@/assets/css/common.scss'
 
 /*JS*/
@@ -18,6 +19,13 @@ Vue.prototype.URL = url
 import MyPlugin from './assets/js/common.js'
 Vue.use(MyPlugin)
 
+//模态框公共组件
+import Model from './components/common/model/index.js';
+Vue.use(Model)
+
+import '@/assets/js/plugin/jquery-1.12.2.min.js'
+import '@/assets/js/plugin/jquery.form.js'
+import '@/assets/js/plugin/bootstrap-datepicker.js'
 
 /*时间戳转换北京时间*/
 Vue.filter('filterdata', function (value,index,second) {//value为13位的时间戳  index为0的话是永久有效，为1的话是为空   second(是否包含时分秒)
@@ -52,7 +60,6 @@ router.beforeEach((to, from, next) => {
   document.body.scrollTop = 0;  
   next();
 })
-
 
 Vue.config.productionTip = false
 Vue.prototype.CUSTOMEVENT = new Vue()   //自定义事件

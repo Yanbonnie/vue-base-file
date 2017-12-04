@@ -47,6 +47,24 @@ exports.install = function (Vue, options) {
         })
     };
 
+    /*公共模态框*/
+    Vue.prototype.modelCommonTip=function(msg,time,topClass){
+        let Time = arguments[1] || 1500;
+        let CLASS = arguments[2] || '';
+        this.$store.dispatch('changeModel',{
+            state:true,
+            context:msg,
+            topClass:CLASS
+        })
+        setTimeout(()=>{
+            this.$store.dispatch('changeModel',{
+                state:false,
+                context:'',
+                topClass:''
+            })
+        },Time)
+    }
+    
     /* 数组包含对象去重 */
     Vue.prototype.unique3 = function(arr,field) {   //field  以对象中的什么字段去重
         var hash = {};

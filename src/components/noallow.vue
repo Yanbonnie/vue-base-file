@@ -1,7 +1,7 @@
 <template>
   <div class="noallow">
     <p>您所访问的页面不存在</p>
-    <a >跳转到首页</a>
+    <router-link to="/hello">跳转到首页</router-link>
   </div>
 </template>
 
@@ -15,13 +15,9 @@ export default {
   },
   mounted(){
     document.title = "404"; 
-    $('body').css('background',"#fff")
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-
 <style scoped lang="scss">
   .noallow{
     img{

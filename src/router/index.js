@@ -4,11 +4,9 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 const Hello = resolve => require(['@/components/Hello'], resolve)                              //demo
-const noallow = resolve => require(['@/components/noallow'], resolve)                             //404页面
+const Noallow = resolve => require(['@/components/noallow'], resolve)                          //404页面
 
 //const sign_state = r => require.ensure([], () => r(require('@/components/sign_state')), 'sign_state')
-
-
 
 export default new Router({  
   // mode: 'history',
@@ -21,6 +19,10 @@ export default new Router({
     {
       path:'/',
       redirect:'/hello'
+    },
+    {
+      path:'/404',
+      component:Noallow
     },
     {
       path:'*',
